@@ -4,7 +4,7 @@ A complete full-stack curriculum management application for schools with role-ba
 
 ## Project Structure
 
-```
+\`\`\`
 omotec-project/
 ├── public/
 │   ├── login.html              # Login page
@@ -26,7 +26,7 @@ omotec-project/
 ├── package.json                # Dependencies
 ├── .env.example                # Environment variables template
 └── README.md                   # This file
-```
+\`\`\`
 
 ## Features
 
@@ -69,23 +69,23 @@ omotec-project/
 
 ### 1. Clone/Download Project
 
-```bash
+\`\`\`bash
 cd omotec-project
-```
+\`\`\`
 
 ### 2. Install Dependencies
 
-```bash
+\`\`\`bash
 npm install
-```
+\`\`\`
 
 ### 3. Setup Database
 
 #### Option A: Using MySQL Command Line
 
-```bash
+\`\`\`bash
 mysql -u root -p < database/schema.sql
-```
+\`\`\`
 
 #### Option B: Using MySQL Workbench or phpMyAdmin
 
@@ -95,13 +95,13 @@ Copy and run the contents of `database/schema.sql` in your MySQL client.
 
 Create a `.env` file from `.env.example`:
 
-```bash
+\`\`\`bash
 cp .env.example .env
-```
+\`\`\`
 
 Edit `.env` and update your database credentials:
 
-```env
+\`\`\`env
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=your_password
@@ -109,16 +109,16 @@ DB_NAME=omotec_curriculum
 PORT=3000
 NODE_ENV=development
 SESSION_SECRET=omotec_secret_key_2024
-```
+\`\`\`
 
 ### 5. Hash Default Passwords (Optional but Recommended)
 
 The default passwords in the database should be hashed. Use bcrypt:
 
-```bash
+\`\`\`bash
 node -e "const bcrypt = require('bcrypt'); bcrypt.hash('password@4321', 10, (err, hash) => { console.log(hash); });"
 node -e "const bcrypt = require('bcrypt'); bcrypt.hash('password@1234', 10, (err, hash) => { console.log(hash); });"
-```
+\`\`\`
 
 Update these hashed values in the database's `users` table.
 
@@ -126,17 +126,17 @@ Update these hashed values in the database's `users` table.
 
 ### Development Mode
 
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 The server will start on `http://localhost:3000`
 
 ### Production Mode
 
-```bash
+\`\`\`bash
 npm start
-```
+\`\`\`
 
 ## API Documentation
 
@@ -145,15 +145,15 @@ npm start
 #### POST /api/auth/login
 Login with email and password
 
-```json
+\`\`\`json
 {
     "email": "Manager@123",
     "password": "password@4321"
 }
-```
+\`\`\`
 
 Response:
-```json
+\`\`\`json
 {
     "success": true,
     "message": "Login successful",
@@ -163,7 +163,7 @@ Response:
         "role": "manager"
     }
 }
-```
+\`\`\`
 
 #### POST /api/auth/logout
 Logout and destroy session
@@ -182,26 +182,26 @@ Get single curriculum by ID
 #### POST /api/curriculum
 Create new curriculum (manager only)
 
-```json
+\`\`\`json
 {
     "class_name": "10th Grade",
     "subject": "Mathematics",
     "topic": "Algebra",
     "description": "Study of algebraic expressions"
 }
-```
+\`\`\`
 
 #### PUT /api/curriculum/:id
 Update curriculum (manager only)
 
-```json
+\`\`\`json
 {
     "class_name": "10th Grade",
     "subject": "Mathematics",
     "topic": "Geometry",
     "description": "Study of geometric shapes"
 }
-```
+\`\`\`
 
 #### DELETE /api/curriculum/:id
 Delete curriculum (manager only)
@@ -220,9 +220,9 @@ https://1drv.ms/x/c/fd7f1ff804d6c5bb/IQAUpykxRhraQL82JhOIHe93AZTWLX8CknKNgdSyuJ9
 
 ### Step 3: Run Import Script
 
-```bash
+\`\`\`bash
 node scripts/import-excel.js
-```
+\`\`\`
 
 The script will:
 - Read the Excel file
@@ -250,9 +250,9 @@ The Excel file must have these columns:
 
 ### Database Connection Error
 
-```
+\`\`\`
 Error: PROTOCOL_CONNECTION_LOST
-```
+\`\`\`
 
 **Solution:**
 - Verify MySQL is running
@@ -261,9 +261,9 @@ Error: PROTOCOL_CONNECTION_LOST
 
 ### Port Already in Use
 
-```
+\`\`\`
 Error: listen EADDRINUSE :::3000
-```
+\`\`\`
 
 **Solution:**
 - Kill process on port 3000
